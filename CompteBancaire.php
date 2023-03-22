@@ -56,19 +56,24 @@ class CompteBancaire
 Créditer le compte de X euros*/
     public function crediter($somme)
     {
-        $result = "Crédit d'une somme de " . $somme . " " . $this->_deviseMonetaire . "sur le compte " . $this->_libelle . ". Nouveau solde = " . $somme + $this->_soldeInitial . " " . $this->_deviseMonetaire . "<br>";
+        $result = "Crédit d'une somme de " . $somme . " " . $this->_deviseMonetaire . "sur le compte " . $this->_libelle . ". <br>Nouveau solde = " . $somme + $this->_soldeInitial . " " . $this->_deviseMonetaire . "<br><br>";
         return $result;
     }
     /*Débiter le compte de X euros*/
     public function debiter($somme)
     {
-        $result = "Débit d'une somme de " . $somme . " " . $this->_deviseMonetaire . "sur le compte " . $this->_libelle . ". Nouveau solde = " . $this->_soldeInitial - $somme . " " . $this->_deviseMonetaire . "<br>";
+        $result = "Débit d'une somme de " . $somme . " " . $this->_deviseMonetaire . "sur le compte " . $this->_libelle . ". <br>Nouveau solde = " . $this->_soldeInitial - $somme . " " . $this->_deviseMonetaire . "<br><br>";
         return $result;
     }
     /* Effectuer un virement d'un compte à l'autre*/
-    public function virementInterne($somme)
+    public function virementInterne(float $somme, CompteBancaire $compteDestinataire)
     {
-        $result = "Un virement interne de " . $somme . " " . $this->_deviseMonetaire . " depuis le compte " . $this->_libelle . " sur le compte " . $this->_libelle . "a été effectué. <br>";
+        $result = "Un virement de " . $somme . " " . $this->_deviseMonetaire . " depuis le compte " . $this->_libelle . " sur le compte " . $compteDestinataire->_libelle . " a été effectué. <br>";
+
+        $this->debiter($somme);
+        $compteDestinataire->crediter($somme);
+        // $compteDestinataire->_libelle += $somme;
+        //essayer avec crediter et debiter
         return $result;
     }
 
