@@ -21,7 +21,7 @@ class Titulaire
     {
         return $this->_nom;
     }
-    public function setnom(string $nom)
+    public function setNom(string $nom)
     {
         $this->_nom = $nom;
     }

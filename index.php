@@ -26,6 +26,9 @@ $compte3 = new CompteBancaire("Livret Bleu", 500, "€", $titulaire2);
 echo $titulaire1;
 echo $titulaire2;
 
+echo $compte1->crediter(50);
+
 // echo $compte1->crediter(50);
+//echo $compte2 ->virement(10) $compte3;
 
 ?>
