@@ -1,9 +1,9 @@
 <?php
 
-class ComptesBancaire
+class CompteBancaire
 {
     private string $_libelle;
-    private int $_soldeInitial = 0;
+    private int $_soldeInitial;
     private $_deviseMonetaire;
     private string $_titulaireUnique;
 
@@ -13,6 +13,7 @@ class ComptesBancaire
         $this->_soldeInitial = $soldeInitial;
         $this->_deviseMonetaire = $deviseMonetaire;
         $this->_titulaireUnique = $titulaireUnique;
+        // $this->_titulaireUnique -> addTitulaire($titulaireUnique);
     }
 
     public function getLibelle()
@@ -62,9 +63,17 @@ public function debiter($somme){
     $result = "Débit d'une somme de " .$somme. " ".$this->_deviseMonetaire. "sur le compte ".$this->_libelle.". Nouveau solde = " .$this->_soldeInitial - $somme . " " .$this->_deviseMonetaire. "<br>";
     return $result;
 }
-/* Effectuer un virement d'un compte à l'autre -----> FAUX */
+/* Effectuer un virement d'un compte à l'autre*/
 public function virementInterne($somme){
     $result = "Un virement interne de " .$somme. " " .$this->_deviseMonetaire. " depuis le compte " .$this->_libelle. " sur le compte " .$this->_libelle. "a été effectué. <br>";
     return $result;
+}
+
+public function getInfos(){
+    
+}
+
+public function __toString(){
+ return $this->getLibelle() .$this->getSoldeInitial() .$this->getDeviseMonetaire() .$this->getTitulaireUnique();
 }
 }

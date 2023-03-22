@@ -17,7 +17,15 @@ function chargerClasse($classe)
 spl_autoload_register('chargerClasse');
 
 $titulaire1 = new Titulaire("nom", "prenom", "1980-05-06", "Ville");
+$titulaire2 = new Titulaire("Nom1", "Prenom1", "1998-08-11", "Ville1");
+
+$compte1 = new CompteBancaire("Livret A", 1200, "€", $titulaire2);
+$compte2 = new CompteBancaire("PEL", 10000, "€", $titulaire2);
+$compte3 = new CompteBancaire("Livret Bleu", 500, "€", $titulaire2);
+
 echo $titulaire1;
-// $compte1->crediter(50);
+echo $titulaire2;
+
+// echo $compte1->crediter(50);
 
 ?>

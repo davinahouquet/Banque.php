@@ -78,4 +78,12 @@ appartenant à celui(celle)-ci.*/
 
     /*Afficher toutes les informations d'un compte bancaire, notamment le nom / prénom du
 titulaire du compte.*/
+    public function addTitulaire(Titulaire $comptesBancaires){
+        $this->_comptesBancaires[] = $comptesBancaires;
+    }
+    public function getInfos(){
+        foreach($this->_comptesBancaires as $compte){
+            echo "Titulaire du compte :" .$this->_nom .$this->_prenom. $compte ."<br>";
+        }
+    }
 }
