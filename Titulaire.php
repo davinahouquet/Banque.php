@@ -86,4 +86,9 @@ titulaire du compte.*/
             echo "Titulaire du compte :" .$this->_nom .$this->_prenom. $compte ."<br>";
         }
     }
+
+    public function afficherComptes(){
+        return $this->getNom() ." ". $this->getPrenom() ." ". $this->calcAge(). "<br>Liste des comptes bancaires :<br>" .$this->_comptesBancaires. "<br>";
+    }
+
 }

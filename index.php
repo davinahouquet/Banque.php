@@ -16,6 +16,9 @@ function chargerClasse($classe)
 }
 spl_autoload_register('chargerClasse');
 
+
+
+
 $titulaire1 = new Titulaire("nom", "prenom", "1980-05-06", "Ville");
 $titulaire2 = new Titulaire("Nom1", "Prenom1", "1998-08-11", "Ville1");
 
@@ -27,8 +30,9 @@ echo $titulaire1;
 echo $titulaire2;
 
 echo $compte1->crediter(50);
+echo $compte1->debiter(1200);
+echo $compte2->crediter(900);
 
-// echo $compte1->crediter(50);
-//echo $compte2 ->virement(10) $compte3;
+echo $titulaire2 -> afficherComptes();
 
 ?>
