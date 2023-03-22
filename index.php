@@ -26,7 +26,7 @@ $compte1 = new CompteBancaire("Livret A", 1200, "€", $titulaire2);
 $compte2 = new CompteBancaire("PEL", 10000, "€", $titulaire2);
 $compte3 = new CompteBancaire("Livret Bleu", 500, "€", $titulaire2);
 
-echo $titulaire1;
+// echo $titulaire1;
 echo $titulaire2;
 
 echo $compte1->crediter(50);

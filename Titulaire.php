@@ -67,12 +67,11 @@ Afficher toutes les informations d'un(e) titulaire (dont l'âge) et l'ensemble d
 appartenant à celui(celle)-ci.*/
     public function __toString()
     {
-        return $this->getNom() . " " . $this->getPrenom() . " "  . $this->calcAge() . " ans " . $this->getVille() . " "  . "<br>";
+        return $this->getNom() . " " . $this->getPrenom() . " "  . $this->calcAge() . " ans " . $this->getVille() . " "  . "<br><br>";
     }
 
     public function calcAge()
     {
-        //  $this->_getDateNaissance(date_diff(date_create($this->_dateNaissance))) . " "
         return 30;
     }
 
@@ -93,8 +92,6 @@ titulaire du compte.*/
 
     public function afficherComptes()
     {
-
-
         return $this->getNom() . " " . $this->getPrenom() . " " . $this->calcAge() . "<br>Liste des comptes bancaires :<br>" . $this->getInfosComptes() . "<br>";
     }
 }
