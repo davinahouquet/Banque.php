@@ -1,6 +1,6 @@
 <?php
 
-class ComptesBancaires
+class ComptesBancaire
 {
     private string $_libelle;
     private int $_soldeInitial = 0;

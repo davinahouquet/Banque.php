@@ -1,6 +1,6 @@
 <h1>Banque</h1>
 <p>Vous êtes chargé(e) de créer un projet orienté objet permettant de gérer des titulaires
-et leurs comptes bancaires respectifs.
+    et leurs comptes bancaires respectifs.
 </p>
 <h2>Résultat</h2>
 
@@ -16,6 +16,8 @@ function chargerClasse($classe)
 }
 spl_autoload_register('chargerClasse');
 
+$titulaire1 = new Titulaire("nom", "prenom", "1980-05-06", "Ville");
+echo $titulaire1;
 // $compte1->crediter(50);
 
 ?>
