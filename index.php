@@ -32,7 +32,7 @@ echo $titulaire2;
 echo $compte1->crediter(50);
 echo $compte1->debiter(1200);
 echo $compte2->crediter(900);
-
-echo $titulaire2 -> afficherComptes();
+echo $compte1->virementInterne(100, $compte2);
+echo $titulaire2->afficherComptes();
 
 ?>

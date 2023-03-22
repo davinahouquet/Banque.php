@@ -13,7 +13,7 @@ class CompteBancaire
         $this->_soldeInitial = $soldeInitial;
         $this->_deviseMonetaire = $deviseMonetaire;
         $this->_titulaireUnique = $titulaireUnique;
-        // $this->_titulaireUnique ->addTitulaireUnique($this);
+        $this->_titulaireUnique->addCompte($this);
     }
 
     public function getLibelle()
@@ -74,7 +74,6 @@ Créditer le compte de X euros*/
 
     public function getInfos()
     {
-
     }
 
     public function __toString()
